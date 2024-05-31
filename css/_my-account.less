@@ -1,0 +1,306 @@
+& when (@media-common = true) {
+	//body.account.page-layout-2columns-left .column.main {
+	//	width: 100%;
+	//}
+	.account {
+        .page-title {
+            font-size: 22px;
+        }
+		.inner-layout {
+			padding: 70px 22px 20px;
+			margin-top: 0;
+		}
+		.column.main .block {
+			margin-bottom: 0;
+		}
+
+		// Titles
+		.block-title,
+		.block .title,
+		.fieldset > .legend {
+			border-bottom: @color-gray-darken1 solid 1px;
+			margin: 0;
+			padding-bottom: 8px;
+
+			strong,
+			span:not(.counter) {
+				color: @theme__color__primary;
+				display: inline-block;
+				font-size: 21px;
+				font-weight: 800;
+				margin: 0;
+			}
+
+			.action.edit {
+				display: inline-block;
+				float: none;
+				margin: 0 0 0 10px;
+			}
+		}
+		.block .title{
+			border-bottom: none;
+			strong{
+				font: bold 22px/16px Arial, Helvetica, sans-serif;
+			}
+		}
+		.fieldset > .legend {
+			strong,
+			span:not(.counter) {
+				font-size: 16px;
+			}
+		}
+		.box-title {
+			font-size: 16px;
+		}
+		.box-content {
+			margin-top: 15px;
+		}
+        .block-dashboard-info{
+            .action.edit {
+                position: relative;
+                margin-right: 30px;
+                &:after {
+                    position: absolute;
+                    left: 38px;
+                    content: "|";
+                }
+            }
+        }
+		.block-collapsible-nav-content,
+		.block-compare,
+		.block-reorder {
+			margin-top: 20px;
+		}
+        .block-compare{
+            .counter.qty{
+                display: block;
+            }
+            .block-content{
+                .action.delete{
+                    position: static;
+                }
+            }
+        }
+        .block-reorder{
+            .product-item{
+                .field.item{
+                    width: initial;
+                    display: flex;
+                    float: none;
+                    .label{
+                        order: 2;
+                    }
+                }
+            }
+        }
+		.block-collapsible-nav-content {
+			.item a {
+				color: @primary__color__lighter;
+				&:hover, &:focus {
+					color: @theme__color__primary-alt;
+				}
+			}
+			.item.current {
+				color: @theme__color__primary-alt;
+			}
+		}
+		// Forms
+		.fieldset {
+			margin-bottom: 20px;
+		}
+		.fieldset > .field:last-child {
+			margin-bottom: 0;
+		}
+		.fieldset > .legend {
+			margin-bottom: 20px;
+		}
+		.form .actions-toolbar {
+			margin-top: 20px;
+		}
+		&__contact-information{
+			overflow: auto;
+		}
+		.block-dashboard-addresses{
+			.block-title{
+				.action{
+					float: right;
+
+					span {
+						font-weight: 400;
+						text-decoration: underline;
+					}
+				}
+			}
+            .block-content{
+				width: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+		}
+		.white-boxes{
+			background: none;
+		}
+		.block-title{
+			border-bottom: none;
+		}
+		.table-order-items{
+			.table-caption{
+				display: none;
+			}
+            thead tr{
+                th{
+                    min-width: 80px;
+                    &:first-child{
+                        padding-left: 0;
+                    }
+                }
+            }
+            tbody tr{
+                td:first-child{
+                    padding-left: 0;
+                }
+            }
+			.orders-recent {
+				margin-top: 0px;
+                .action.view {
+                    position: relative;
+                    margin-right: 20px;
+                    span:after {
+                        position: absolute;
+                        left: 46px;
+                        content: "|";
+                    }
+                }
+			}
+		}
+		.block-collapsible-nav-content{
+			.item{
+				margin-top: 0;
+				font-size: 14px;
+				font-weight: 300;
+				color: #000;
+			}
+		}
+		.account__contact-information,
+		address {
+			font-size: 14px;
+			font-weight: 400;
+		}
+        .box-information,
+        .box-newsletter,
+        .box-billing-address,
+        .box-shipping-address{
+            width: 100%;
+            float: none;
+        }
+	}
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__md) {
+	.account {
+		.inner-layout {
+			padding-left: 45px;
+			padding-right: 45px;
+		}
+		.block-dashboard-addresses{
+			.block-title{
+				.action{
+					margin-right: 30.5%;
+				}
+			}
+		}
+	}
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__lg){ /* 1200px */
+	.account {
+		.inner-layout {
+			padding-left: 65px;
+			padding-right: 65px;
+		}
+	}
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__md) {
+	.account {
+		.block-dashboard-addresses{
+            .block-content{
+                flex-direction: initial;
+            }
+		}
+	}
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+	.account {
+		.page-title{
+			font-size: 29px;
+		}
+		.inner-layout {
+			padding-left: 35px;
+			padding-right: 35px;
+			& > .row {
+				justify-content: space-between;
+			}
+		}
+		.block-collapsible-nav-content,
+		.block-compare,
+		.block-reorder {
+			margin-top: 30px;
+		}
+		.white-boxes{
+			margin: 0;
+			padding: 0 25px 0 25px;
+		}
+		.block-dashboard-orders{
+			margin-top: 35px;
+		}
+		.block-dashboard-addresses{
+			.block-title{
+				.action{
+					margin-right: 23%;
+				}
+			}
+		}
+	}
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
+    .account {
+        .fieldset > .legend {
+            strong,
+            span:not(.counter) {
+                font-size: 20px;
+            }
+        }
+        .block-dashboard-orders, .table-order-items{
+            thead tr{
+                display: table-row;
+            }
+            .orders-recent {
+                .action.view {
+                    span:after {
+                        left: 79px;
+                    }
+                }
+            }
+        }
+        .box-information,
+        .box-newsletter,
+        .box-billing-address,
+        .box-shipping-address{
+        	width: initial;
+        	float: initial;
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+	.account {
+		.block-dashboard-orders{
+			margin-top: 15px;
+		}
+		.block-dashboard-addresses{
+			.block-title{
+				.action{
+					margin-right: 7%;
+				}
+			}
+		}
+	}
+}
